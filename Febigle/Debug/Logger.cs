@@ -2,14 +2,14 @@ using LogLevel = BepInEx.Logging.LogLevel;
 
 namespace Febigle.Debug;
 
-public class Logger
+public class ModLogger
 {
-    public static void Info(string Text) => SendLog(Text, LogLevel.Info);
-    public static void Error(string Text) => SendLog(Text, LogLevel.Error);
-    public static void Warning(string Text) => SendLog(Text, LogLevel.Warning);
-    public static void Fatal(string Text) => SendLog(Text, LogLevel.Fatal);
-    public static void Message(string Text) => SendLog(Text, LogLevel.Message);
-    public static void Debug(string Text) => SendLog(Text, LogLevel.Debug);
+    public static void Info(string Text, string Tag = "") => SendLog($"{Tag} " + Text, LogLevel.Info);
+    public static void Error(string Text, string Tag = "") => SendLog($"{Tag} " + Text, LogLevel.Error);
+    public static void Warning(string Text, string Tag = "") => SendLog($"{Tag} " + Text, LogLevel.Warning);
+    public static void Fatal(string Text, string Tag = "") => SendLog($"{Tag} " + Text, LogLevel.Fatal);
+    public static void Message(string Text, string Tag = "") => SendLog($"{Tag} " + Text, LogLevel.Message);
+    public static void Debug(string Text, string Tag = "") => SendLog($"{Tag} " + Text, LogLevel.Debug);
 
     static void SendLog(string Text, LogLevel level = LogLevel.Info)
     {
