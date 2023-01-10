@@ -19,6 +19,7 @@ public partial class FebiglePlugin : BasePlugin
     public const string FEBIGLE_MOD_ID = "jp.AUMaps.Febigle";
     public const string FEBIGLE_MOD_VERSION = "0.0.1";
     public const string FEBIGLE_GUID = "Febigle";
+    public const string FEBIGLE_COLOR_CODE = "";
     public const ShipStatus.MapType FEBIGLE_MAP_TYPE = (ShipStatus.MapType)6;
     internal static BepInEx.Logging.ManualLogSource Logger;
 

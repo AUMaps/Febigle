@@ -15,13 +15,11 @@ public static class VersionShowerPatch
 
     private static void SetModVersionText(VersionShower vs)
     {
-        GameObject gameObject = new("FebigleVersionText");
-        gameObject.transform.parent = vs.transform.parent;
-        TextMeshPro tmp = gameObject.AddComponent<TextMeshPro>();
-        tmp.text = FebiglePlugin.FEBIGLE_GUID + " Ver." + FebiglePlugin.FEBIGLE_MOD_VERSION;
-        tmp.fontSize = vs.text.fontSize;
-        tmp.alignment = TextAlignmentOptions.Right;
-        tmp.transform.localPosition = new(-10f - vs.transform.position.x, vs.transform.position.y, vs.transform.position.z);
+        var credits = Object.Instantiate(vs.text);
+        credits.text = FebiglePlugin.FEBIGLE_GUID + " Ver." + FebiglePlugin.FEBIGLE_MOD_VERSION;
+        credits.fontSize = vs.text.fontSize;
+        credits.alignment = TextAlignmentOptions.Right;
+        credits.transform.localPosition = new(-vs.transform.position.x, vs.transform.position.y, vs.transform.position.z);
 
         ModLogger.Info("Mod Version Shower is activated!", "[Version Shower]");
     }
